@@ -1,5 +1,14 @@
 /* Chef's website. Colours and type from Chef's brand guide (Design/Brand/README.md in the app). */
 
+/* Figtree for headings, self-hosted: loading it from Google Fonts would send visitors' IP
+   addresses to Google. SIL Open Font License, assets/fonts/OFL.txt. */
+@font-face {
+  font-family: "Figtree";
+  src: url("fonts/Figtree.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
 :root {
   --paper: #F8F7FB;
   --surface: #FFFFFF;
@@ -53,10 +62,13 @@ header .logo img { display: block; height: 44px; width: auto; }
 nav { display: flex; gap: 18px; font-size: 15px; }
 
 h1, h2, h3 {
-  font-family: ui-rounded, "SF Pro Rounded", -apple-system, system-ui, sans-serif;
+  font-family: "Figtree", -apple-system, system-ui, sans-serif;
   line-height: 1.2;
-  font-weight: 700;
+  font-weight: 650;
+  letter-spacing: -0.01em;
 }
+
+h3 { font-weight: 600; }
 
 h1 { font-size: 34px; margin: 32px 0 8px; }
 h2 { font-size: 22px; margin: 36px 0 8px; }
@@ -87,12 +99,14 @@ a:hover { text-decoration-thickness: 2px; }
 .links { display: grid; gap: 12px; margin: 28px 0; padding: 0; list-style: none; }
 .links a {
   display: block;
+  font-family: "Figtree", -apple-system, system-ui, sans-serif;
   background: var(--surface);
   border: 1px solid var(--hairline);
   border-radius: 16px;
   padding: 14px 18px;
   text-decoration: none;
   font-weight: 600;
+  letter-spacing: -0.01em;
 }
 .links a:hover { background: var(--mist); }
 
