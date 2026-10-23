@@ -1,0 +1,116 @@
+/* Chef's website. Colours and type from Chef's brand guide (Design/Brand/README.md in the app). */
+
+:root {
+  --paper: #F8F7FB;
+  --surface: #FFFFFF;
+  --hairline: #E7E4EC;
+  --ink: #26222B;
+  --ink-2: #6F6977;
+  --violet: #6B54B8;
+  --mist: #E6DFF8;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1C1A20;
+    --surface: #25222A;
+    --hairline: #34303A;
+    --ink: #F1ECE4;
+    --ink-2: #A49EAB;
+    --violet: #B3A2EE;
+    --mist: #332D45;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+main, header, footer {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 28px;
+  padding-bottom: 8px;
+}
+
+header .logo img { display: block; height: 44px; width: auto; }
+
+nav { display: flex; gap: 18px; font-size: 15px; }
+
+h1, h2, h3 {
+  font-family: ui-rounded, "SF Pro Rounded", -apple-system, system-ui, sans-serif;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h1 { font-size: 34px; margin: 32px 0 8px; }
+h2 { font-size: 22px; margin: 36px 0 8px; }
+h3 { font-size: 18px; margin: 24px 0 4px; }
+
+p, li { margin: 0 0 12px; }
+ul { padding-left: 22px; }
+
+a { color: var(--violet); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+
+.lead { font-size: 20px; color: var(--ink-2); margin-bottom: 24px; }
+.muted { color: var(--ink-2); font-size: 15px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 20px;
+  padding: 20px 22px;
+  margin: 20px 0;
+}
+
+.card p:last-child { margin-bottom: 0; }
+
+.hero { text-align: center; padding: 24px 0 8px; }
+.hero img { width: 128px; height: 128px; border-radius: 28px; }
+
+.links { display: grid; gap: 12px; margin: 28px 0; padding: 0; list-style: none; }
+.links a {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  padding: 14px 18px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.links a:hover { background: var(--mist); }
+
+footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  border-top: 1px solid var(--hairline);
+  color: var(--ink-2);
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+header .logo img.only-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  header .logo img.only-light { display: none; }
+  header .logo img.only-dark { display: block; }
+}
