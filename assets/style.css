@@ -123,8 +123,12 @@ footer {
   gap: 8px;
 }
 
-header .logo img.only-dark { display: none; }
+header .logo img.only-dark, .store img.only-dark { display: none; }
 @media (prefers-color-scheme: dark) {
-  header .logo img.only-light { display: none; }
+  header .logo img.only-light, .store img.only-light { display: none; }
   header .logo img.only-dark { display: block; }
+  .store img.only-dark { display: inline-block; }
 }
+
+.store { margin-bottom: 24px; }
+.store img { height: 54px; width: auto; }
